@@ -2,6 +2,7 @@
 /*Matrix Multiplication Reference:https://ghenshaw-work.medium.com/3-ways-to-understand-matrix-multiplication-fe8a007d7b26*/
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 void floatMatrixMultiplication(float *matrixA, float *matrixB, float *matrixC, int rowsA, int columnsA, int columnsB) {
     int i, j, k;
