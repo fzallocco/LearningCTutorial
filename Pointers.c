@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /*resources on Pointers: https://www.cs.yale.edu/homes/aspnes/pinewiki/C%282f%29Pointers.html*/
 /*https://www.youtube.com/watch?v=2ybLD6_2gKM&list=PLtr3JKh9YHSuaOqDn3vdqvDLlxmg29DWs&index=177*/
 void print(int *a) /*this function not only accepts pointers to integers but also to arrays*/
@@ -39,6 +40,8 @@ int main(void)
 	printf("*b = %d\n", *b);
 	b++;
 	printf("*b = %d\n", *b);
+	printf("\n");
+	printf("testing null pointers and array pointers\n");
 	/*b++;
 	printf("*b = %d\n", *b);*/
 	/*The below code is not going to work because we cannot assign arrays to arrays. 
