@@ -50,7 +50,7 @@ int main(void)
 	}else{printf("4. memory free-up failed\n");}
 	
 	printf("Array Test\n");
-	int myList[7] = {12, 24, 45, 2, 89, 3, 100};
+	int myList[] = {12, 24, 45, 2, 89, 3, 100};
 	int* a = myList;
 	/*size_t size = (&myList)[1] - myList;*/
 	size_t size = sizeof(myList) / sizeof(myList[0]);
