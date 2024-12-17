@@ -24,5 +24,6 @@ test2:
 test3: 
 	@$(NVCC) $(CUDA_FLAGS) -o test_cu test.cu
 
+#rm -f test test2 test_cu *.o this is for Linux
 clean: 
-	rm -f test test2 test_cu *.o
+	del test test2 test_cu *.exe *.o
