@@ -1,4 +1,4 @@
-.PHONY: test test_obj test_obj_exe_run test2 test_cu clean
+.PHONY: test test_obj test_obj_exe_run test2 clean
 
 GCC = gcc
 NVCC = nvcc
@@ -25,5 +25,6 @@ test3:
 	@$(NVCC) $(CUDA_FLAGS) -o test_cu test.cu
 
 #rm -f test test2 test_cu *.o this is for Linux
-clean: 
-	del test test2 test_cu *.exe *.o
+#del test test2 test_cu *.exe *.o this is for Windows
+clean:
+	rm -f test test2 *.o
