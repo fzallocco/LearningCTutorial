@@ -7,6 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install necessary packages
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+    python3 python3-pip \
     nmap \
     vim \
     build-essential \
@@ -26,10 +27,12 @@ WORKDIR /app
 # Copy the Makefile and source code
 COPY Makefile .
 COPY *.c *.cpp *.cu .
+COPY requirements.txt .
 
 # Build the project
 #RUN make #uncomment this to run all the programs, but specify this in Makefile
 
+RUN pip install --no-cache-dir -r requirements.txt
 RUN gcc --version
 RUN g++ --version
 RUN nvcc --version
