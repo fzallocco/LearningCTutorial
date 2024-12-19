@@ -1,14 +1,24 @@
 # Use a base image with build tools
-FROM ubuntu:latest
+#FROM ubuntu:latest
+FROM nvidia/cuda:12.2.0-devel-ubuntu22.04
+
+# Set envrionment variables
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install necessary packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     nmap \
     vim \
     build-essential \
     gcc \
     g++ \
-    make
+    make \
+    git \
+    curl \
+    intel-gpu-tools \
+    lshw \
+    nvidia-utils-525 \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
 WORKDIR /app
@@ -20,5 +30,8 @@ COPY *.c *.cpp *.cu .
 # Build the project
 #RUN make #uncomment this to run all the programs, but specify this in Makefile
 
+RUN gcc --version
+RUN g++ --version
+RUN nvcc --version
 # Specify the command to run when the container starts
-#CMD ["./your_executable"] #uncomment this to run c/c++ executables
+CMD ["bash"]
