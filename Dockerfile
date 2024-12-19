@@ -27,7 +27,7 @@ WORKDIR /app
 # Copy the Makefile and source code
 COPY Makefile .
 COPY *.c *.cpp *.cu .
-COPY requirements.txt .
+COPY *.txt *.py .
 
 # Build the project
 #RUN make #uncomment this to run all the programs, but specify this in Makefile
